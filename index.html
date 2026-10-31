@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<title>Aroma & Style — Atir va erkaklar kiyimi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Original atirlar va erkaklar kiyimi onlayn doʻkoni. Tez yetkazib berish, buyurtma Telegram orqali.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#faf7f0;--fg:#1b1713;--card:#fff;--mut:#7a7165;--line:#e6dfd0;--gold:#a8832f;--ink:#14110d;--onink:#f5ecd6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#100e0b;--fg:#f1e9d8;--card:#1a1713;--mut:#a39a89;--line:#2e2920;--gold:#d4af5a;--ink:#d4af5a;--onink:#14110d}}
+:root[data-theme="dark"]{--bg:#100e0b;--fg:#f1e9d8;--card:#1a1713;--mut:#a39a89;--line:#2e2920;--gold:#d4af5a;--ink:#d4af5a;--onink:#14110d}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--fg);font:400 15px/1.55 Inter,system-ui,sans-serif}
+h1,h2,h3,.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{max-width:1100px;margin:auto;display:flex;align-items:center;gap:16px;padding:12px 18px}
+.logo{font-size:24px;letter-spacing:.5px;flex:1}.logo b{color:var(--gold)}
+nav{display:flex;gap:18px}nav a{color:var(--mut);font-size:14px}nav a:hover{color:var(--gold)}
+.cartbtn{position:relative;padding:8px 14px;border:1px solid var(--line);border-radius:99px;font-size:14px}
+.cartbtn i{font-style:normal;background:var(--gold);color:var(--onink);border-radius:99px;padding:1px 7px;margin-left:6px;font-size:12px}
+@media(max-width:640px){nav{display:none}}
+.hero{background:var(--ink);color:var(--onink);text-align:center;padding:84px 22px 90px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0,rgba(212,175,90,.28),transparent 60%)}
+.hero>*{position:relative}
+.hero small{letter-spacing:3px;text-transform:uppercase;font-size:12px;opacity:.8}
+.hero h1{font-size:clamp(38px,8vw,72px);line-height:1.05;margin:14px 0}
+.hero p{max-width:520px;margin:0 auto 26px;opacity:.85}
+.btn{display:inline-block;background:var(--gold);color:var(--onink);padding:13px 28px;border-radius:99px;font-weight:600;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.hero .btn{background:var(--onink);color:var(--ink)}
+section{max-width:1100px;margin:auto;padding:54px 18px}
+h2{font-size:34px;text-align:center}
+.sub{text-align:center;color:var(--mut);margin:6px 0 26px}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+.chip{padding:8px 18px;border:1px solid var(--line);border-radius:99px;font-size:14px;color:var(--mut)}
+.chip.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tools{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0 26px}
+.tools input,.tools select,.f input,.f textarea{padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);font:inherit;min-width:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .25s,box-shadow .25s;cursor:pointer}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.14)}
+.img{aspect-ratio:1;display:grid;place-items:center;color:rgba(255,255,255,.92);transition:transform .4s}
+.card:hover .img{transform:scale(1.06)}.wrap{overflow:hidden}
+.img.ph{display:block;aspect-ratio:3/4}.img.ph img{width:100%;height:100%;object-fit:cover;display:block}.mimg{width:100%;aspect-ratio:3/4;max-height:62vh;object-fit:cover;object-position:top;display:block}.grid{align-items:start}
+.img svg{width:46%;height:46%}
+.info{padding:14px}.info small{color:var(--mut);font-size:12px}.info h3{font-size:20px;margin:2px 0 8px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.price{font-weight:600;color:var(--gold)}
+.add{background:var(--fg);color:var(--bg);border-radius:99px;padding:6px 13px;font-size:13px}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.why div,.rev div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center}
+.why b{display:block;font-family:"Cormorant Garamond",serif;font-size:22px;color:var(--gold);margin-bottom:4px}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.rev p{font-style:italic}.rev small{color:var(--mut)}
+footer{background:var(--ink);color:var(--onink);padding:40px 18px calc(40px + env(safe-area-inset-bottom,0px));text-align:center}
+footer a{color:var(--onink);text-decoration:underline;margin:0 8px}footer p{opacity:.8;margin-top:8px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;z-index:40}.ov.on{display:block}
+.modal,.drawer{position:fixed;background:var(--bg);z-index:50;display:none;overflow:auto}
+.modal{left:50%;top:50%;transform:translate(-50%,-50%);width:min(560px,94vw);max-height:90vh;border-radius:18px}
+.drawer{right:0;top:0;bottom:0;width:min(420px,100vw);padding:20px 18px calc(20px + env(safe-area-inset-bottom,0px))}
+.modal.on,.drawer.on{display:block}
+.x{position:absolute;right:12px;top:10px;font-size:26px;z-index:2;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.drawer .x{color:var(--fg);text-shadow:none}
+.mb{padding:18px}.mb h3{font-size:28px}.opts{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}
+.opts .chip.on{background:var(--gold);border-color:var(--gold);color:var(--onink)}
+.notes{color:var(--mut);font-size:13px;margin-top:6px}
+.it{display:flex;gap:10px;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.q button{border:1px solid var(--line);border-radius:6px;width:26px;height:26px}.q span{margin:0 8px}
+.tot{display:flex;justify-content:space-between;font-weight:600;font-size:18px;margin:14px 0}
+.f{display:grid;gap:10px;margin-bottom:12px}.f input,.f textarea{width:100%}
+.float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:15;background:#229ed9;color:#fff;border-radius:99px;padding:12px 18px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.empty{text-align:center;color:var(--mut);padding:30px 0}
+.img.ph svg{width:100%;height:100%;display:block}
+footer .ord{font-size:18px;margin:16px 0 10px;opacity:1}footer a.tgb{display:inline-block;background:var(--gold);color:var(--onink);text-decoration:none;font-weight:600;font-size:18px;padding:11px 26px;border-radius:99px;margin:0}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<a class="logo" href="#top">Aroma<b>&amp;</b>Style</a>
+<nav><a href="#katalog" data-go="atir">Atirlar</a><a href="#katalog" data-go="kiyim">Erkaklar kiyimi</a><a href="#nega">Biz haqimizda</a><a href="#aloqa">Aloqa</a></nav>
+<button class="cartbtn" id="cb">🛒 Savat<i id="cc">0</i></button>
+</div></header>
+
+<div class="hero" id="top"><small>Atir · Erkaklar kiyimi</small>
+<h1>Sizning uslubingiz,<br>sizning hidingiz</h1>
+<p>Original atirlar va erkaklar uchun sara kiyimlar — bir joyda. Buyurtma bering, biz tez yetkazib beramiz.</p>
+<a class="btn" href="#katalog">Xarid qilish</a></div>
+
+<section id="katalog">
+<h2>Katalog</h2><p class="sub">Atirlar va erkaklar kiyimi</p>
+<div class="tabs" id="tabs"></div>
+<div class="tools">
+<input id="q" placeholder="Qidiruv…" type="search">
+<select id="sub"></select>
+<select id="sort"><option value="">Saralash</option><option value="a">Arzonroq</option><option value="d">Qimmatroq</option></select>
+</div>
+<div class="grid" id="grid"></div>
+</section>
+
+<section id="nega"><h2>Nega bizni tanlashadi</h2><p class="sub">Ishonch va sifat</p>
+<div class="why"><div><b>100% original</b>Barcha atirlar va kiyimlar asl mahsulot</div><div><b>Tez yetkazish</b>Buyurtmangiz imkon qadar tez yetib boradi</div><div><b>Qulay toʻlov</b>Naqd yoki karta orqali toʻlang</div><div><b>Sifat kafolati</b>Muammo boʻlsa, almashtirib beramiz</div></div></section>
+
+<section><h2>Mijozlar fikrlari</h2><p class="sub">Bizga ishonganlar</p>
+<div class="rev"><div><p>“Atir juda chiroyli hid beradi, kun boʻyi saqlanadi.”</p><small>— Jasur, Toshkent</small></div><div><p>“Ko‘ylak sifati a’lo, oʻlchami aynan mos keldi.”</p><small>— Aziz, Samarqand</small></div><div><p>“Tez yetkazishdi, qadoqlash ham juda zoʻr.”</p><small>— Dilshod, Buxoro</small></div></div></section>
+
+<footer id="aloqa"><div class="logo" style="font-size:28px">Aroma<b style="color:var(--gold)">&amp;</b>Style</div>
+<p class="ord">Buyurtma berish uchun shunga yozing:</p><a class="tgb" href="https://t.me/biro_asxal" target="_blank" rel="noopener">✈ @biro_asxal</a>
+<p>Ish vaqti: har kuni 09:00 – 21:00</p></footer>
+
+<a class="float" href="https://t.me/biro_asxal" target="_blank" rel="noopener">✈ Telegram</a>
+
+<div class="ov" id="ov"></div>
+<div class="modal" id="modal"></div>
+<div class="drawer" id="drawer"></div>
+
+<script>
+const SOM=n=>n.toLocaleString("ru-RU").replace(/\u00a0/g," ")+" soʻm";
+const BOTTLE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M10 6v2M14 6v2M6 12a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z"/><circle cx="12" cy="15" r="2.2"/></svg>';
+const SHIRT='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 3 3 6l2 4 3-1v12h8V9l3 1 2-4-5-3a4 4 0 0 1-8 0z"/></svg>';
+const ML=["30 ml","50 ml","100 ml"],SZ=["S","M","L","XL","XXL"];
+const mix=(h,t,to)=>{const a=h.slice(1).match(/../g).map(x=>parseInt(x,16)),b=to.slice(1).match(/../g).map(x=>parseInt(x,16));return"#"+a.map((v,i)=>Math.round(v+(b[i]-v)*t).toString(16).padStart(2,"0")).join("")};
+const wrap=(s,n)=>{const L=[];let c="";s.split(" ").forEach(w=>{if(c&&(c+" "+w).length>n){L.push(c);c=w}else c=c?c+" "+w:w});L.push(c);return L};
+const esc=s=>s.replace(/&/g,"&amp;");
+const SH=[[85,150,130,190,14,122,80,56,70],[95,130,110,215,8,125,58,50,76],[68,165,164,170,24,118,100,64,70]];
+function bottle(p){const[bx,by,bw,bh,r,cx,cy,cw,ch]=SH[p.sh],lw=Math.round(bw*.74),lx=150-lw/2,lh=Math.round(bh*.44),ly=by+Math.round(bh*.36),n=Math.floor(lw/6.6),ls=wrap(p.nm,n).slice(0,3),bs=Math.min(10,lw*1.5/p.br.length);
+return `<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${esc(p.n)}"><defs><linearGradient id="g${p.id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${p.k[0]}"/><stop offset="1" stop-color="${p.k[1]}"/></linearGradient><linearGradient id="s${p.id}" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".25" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></linearGradient></defs><rect width="300" height="400" fill="url(#g${p.id})"/><ellipse cx="150" cy="${by+bh+8}" rx="${bw/2+14}" ry="9" fill="#000" opacity=".35"/><rect x="${cx}" y="${cy}" width="${cw}" height="${ch}" rx="5" fill="#16120e" stroke="#c9a85a" stroke-width="1.2"/><rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="${r}" fill="${p.l}"/><rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="${r}" fill="url(#s${p.id})" stroke="#fff" stroke-opacity=".4"/><rect x="${lx}" y="${ly}" width="${lw}" height="${lh}" fill="#f6efe0" opacity=".96"/><text x="150" y="${ly+15}" text-anchor="middle" font-size="${bs}" letter-spacing="1.2" fill="#6b5420" font-family="Inter,sans-serif">${esc(p.br.toUpperCase())}</text>${ls.map((t,i)=>`<text x="150" y="${ly+32+i*14}" text-anchor="middle" font-size="13" font-weight="600" fill="#2a2116" font-family="Cormorant Garamond,Georgia,serif">${esc(t)}</text>`).join("")}</svg>`}
+const ATIR=[
+["Dior","Sauvage EDP","Erkaklar",780000,"#0e2447",1,"bergamot, lavanda, vanil, ambroksan"],
+["Dior","Miss Dior Parfum","Ayollar",1250000,"#e8788f",0,"atirgul, yasmin, paçuli"],
+["Tom Ford","Cherry Smoke","Uniseks",1450000,"#6a1418",0,""],
+["Chanel","Bleu de Chanel EDP","Erkaklar",950000,"#0f2a40",2,"greyfurt, yalpiz, sandal, kedr"],
+["Dior","Homme Intense","Erkaklar",900000,"#5a3a4a",1,"iris, lavanda, kedr, vetiver"],
+["Creed","Aventus","Erkaklar",1750000,"#7a8a6a",1,"ananas, bergamot, qayin tutuni, mushk"],
+["Versace","Eros","Erkaklar",560000,"#1fa8c9",2,"yalpiz, yashil olma, tonka, vanil"],
+["Paco Rabanne","1 Million","Erkaklar",520000,"#c9a02a",0,"greyfurt, doljin, teri, amber"],
+["Paco Rabanne","Invictus","Erkaklar",540000,"#8aa3b8",1,"greyfurt, dengiz notasi, guayak, amber"],
+["Armani","Acqua di Giò Profondo","Erkaklar",620000,"#1a4f8a",2,"dengiz notasi, mandarin, rozmarin, paçuli"],
+["YSL","Y EDP","Erkaklar",760000,"#1b3b66",1,"olma, zanjabil, shalfey, tonka"],
+["J.P. Gaultier","Le Male Elixir","Erkaklar",880000,"#5c2a8a",0,"yalpiz, lavanda, vanil, tonka"],
+["Prada","L’Homme","Erkaklar",680000,"#c98a2a",1,"neroli, iris, amber, paçuli"],
+["Hugo Boss","Bottled","Erkaklar",480000,"#8a4a22",0,"olma, doljin, sandal, vetiver"],
+["Azzaro","Wanted","Erkaklar",560000,"#3a8a3a",1,"limon, zanjabil, kardamon, tonka"],
+["Montblanc","Explorer","Erkaklar",450000,"#173a5c",0,"bergamot, vetiver, paçuli, ambroksan"],
+["Armani","Stronger With You Intensely","Erkaklar",700000,"#6a3040",0,"pushti qalampir, lavanda, kashtan, vanil"],
+["Carolina Herrera","Bad Boy","Erkaklar",640000,"#29313f",1,"bergamot, oq qalampir, kakao, tonka"],
+["Dolce&Gabbana","The One for Men","Erkaklar",600000,"#b8782a",1,"greyfurt, koriandr, amber, tamaki"],
+["Chanel","Coco Mademoiselle","Ayollar",1100000,"#e6b878",0,"apelsin, yasmin, atirgul, paçuli, vetiver"],
+["Chanel","Chance Eau Tendre","Ayollar",980000,"#f2b6c0",0,"greyfurt, ayva, yasmin, mushk"],
+["YSL","Libre","Ayollar",880000,"#d8b068",1,"lavanda, mandarin, apelsin guli, vanil"],
+["Lancôme","La Vie Est Belle","Ayollar",760000,"#e8a8c0",2,"nok, iris, paçuli, praline, vanil"],
+["Dior","J’adore","Ayollar",920000,"#e8c060",1,"yasmin, atirgul, ilang-ilang, mandarin"],
+["Gucci","Bloom","Ayollar",640000,"#e8c8b0",0,"tuberoza, yasmin, oq gullar"],
+["Versace","Bright Crystal","Ayollar",520000,"#f0a0b8",0,"yuzu, anor, pion, magnoliya, mushk"],
+["Carolina Herrera","Good Girl","Ayollar",780000,"#1f2a6a",1,"bodom, kofe, tuberoza, yasmin, tonka"],
+["Armani","My Way","Ayollar",720000,"#f0e0c8",2,"apelsin guli, tuberoza, yasmin, vanil"],
+["Viktor&Rolf","Flowerbomb","Ayollar",880000,"#f4a8c8",2,"yasmin, atirgul, orkide, paçuli"],
+["Narciso Rodriguez","For Her","Ayollar",640000,"#e8d0c0",0,"mushk, amber, apelsin guli"],
+["Dolce&Gabbana","Light Blue","Ayollar",520000,"#6fc0e8",0,"sitsiliya limoni, olma, yasmin, kedr"],
+["Tom Ford","Lost Cherry","Uniseks",1650000,"#7a0f14",0,"gilos, bodom, yasmin, tonka"],
+["Tom Ford","Oud Wood","Uniseks",1550000,"#6a4a2a",0,"oud, sandal, kardamon, tonka"],
+["Tom Ford","Tobacco Vanille","Uniseks",1600000,"#7a4010",0,"tamaki, vanil, kakao, quritilgan mevalar"],
+["MFK","Baccarat Rouge 540","Uniseks",1700000,"#d8a860",1,"zaʻfaron, yasmin, amberwood, kedr"],
+["Creed","Silver Mountain Water","Uniseks",1500000,"#b0c8e0",1,"bergamot, yashil choy, sandal, mushk"],
+["Byredo","Gypsy Water","Uniseks",1250000,"#c8d8b0",1,"archa, limon, sandal, vanil"],
+["Initio","Oud for Greatness","Uniseks",1800000,"#7a5a30",1,"oud, zaʻfaron, lavanda, paçuli, mushk"],
+["Parfums de Marly","Layton","Uniseks",1350000,"#3a5a8a",0,"olma, lavanda, bergamot, vanil, kardamon"],
+["Le Labo","Santal 33","Uniseks",1400000,"#c8b890",1,"sandal, kedr, charm, kardamon"],
+["Louis Vuitton","Afternoon Swim","Uniseks",3650000,"#4fb0e0",1,"mandarin, apelsin, bergamot",["100 ml"]],
+["Louis Vuitton","Imagination","Erkaklar",3700000,"#9fd8d0",1,"sitron, qora choy, zanjabil, amber",["100 ml"]],
+["Zara","Night Pour Homme II","Erkaklar",590000,"#10264a",2,"bergamot, kardamon, lavanda, kedr, amber, tonka",["100 ml"]],
+["Zara Man","Silver","Erkaklar",330000,"#1c1c1c",0,"",["100 ml"]],
+["Zara Man","Gold","Erkaklar",330000,"#2a2418",0,"",["100 ml"]],
+["Zara","Navy Black EDT","Erkaklar",450000,"#1a2a8a",2,"",["100 ml"]],
+["Tom Ford","Ombre Leather","Uniseks",1450000,"#2a2420",1,"charm, kardamon, yasmin, amber"],
+["Armaf","Club de Nuit Intense Man","Erkaklar",550000,"#161616",0,"limon, ananas, qora smorodina, qayin, mushk",["100 ml"]],
+["Armaf","Club de Nuit Intense Man Limited Edition","Erkaklar",700000,"#4a4040",0,"",["100 ml"]],
+["Acca Kappa","Mandarin & Green Tea","Uniseks",620000,"#e8e070",0,"mandarin, yashil choy",["100 ml"]],
+["Creed","Wild Vetiver","Erkaklar",1650000,"#7ac060",1,""],
+["Rochas","Femme","Ayollar",560000,"#e8a020",2,"olxoʻri, shaftoli, atirgul, sandal",["100 ml"]],
+["Parfums de Marly","Sedley","Erkaklar",1350000,"#3a6a9a",0,"yalpiz, bergamot, lavanda, kedr"],
+["Parfums de Marly","Percival","Erkaklar",1400000,"#1a2f6a",0,""],
+["Azzaro","The Most Wanted Intense","Erkaklar",650000,"#1a1a1e",1,""],
+["Armani","Acqua di Giò EDP","Erkaklar",720000,"#d8dcb0",0,"dengiz notasi, yashil mandarin, bergamot, paçuli"],
+["Armani","Acqua di Giò Intense","Erkaklar",800000,"#1a1a1a",1,"bergamot, shalfey, yogʻoch, amber"],
+["Emporio Armani","Stronger With You Amber","Erkaklar",820000,"#d0601a",2,""]
+].map((r,i)=>({id:i+1,t:"atir",c:r[2],br:r[0],nm:r[1],n:r[0]+" "+r[1],p:r[3],l:r[4],sh:r[5],k:[mix(r[4],.7,"#000000"),mix(r[4],.25,"#000000")],d:r[2]==="Uniseks"?"Ham erkak, ham ayol uchun mos original atir.":(r[2]==="Erkaklar"?"Erkaklar":"Ayollar")+" uchun original atir. Kundalik va maxsus kunlar uchun.",nt:r[6]?"Asosiy notalar: "+r[6]:"",o:r[7]}));
+const P=[...ATIR,
+{id:101,t:"kiyim",c:"Kurtka",n:"Qisqa kurtka, toʻq koʻk",p:599990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:102,t:"kiyim",c:"Kurtka",n:"Choʻntakli kurtka, toʻq koʻk",p:599990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:103,t:"kiyim",c:"Kurtka",n:"Qora puffer kurtka",p:599990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:104,t:"kiyim",c:"Vetrovka",n:"Kulrang vetrovka",p:499990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:105,t:"kiyim",c:"Kurtka",n:"Jigarrang puffer kurtka",p:599990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:106,t:"kiyim",c:"Vetrovka",n:"Qora kapyushonli vetrovka",p:299990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:107,t:"kiyim",c:"Kardigan",n:"Bej molniyali kardigan",p:499990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:108,t:"kiyim",c:"Kardigan",n:"Qora tugmali kardigan",p:499990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:109,t:"kiyim",c:"Kardigan",n:"Jigarrang rebrli kardigan",p:449990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:110,t:"kiyim",c:"Kardigan",n:"Toʻq koʻk rebrli kardigan",p:449990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:111,t:"kiyim",c:"Vetrovka",n:"Qora bomber vetrovka",p:559990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:112,t:"kiyim",c:"Kurtka",n:"Toʻq koʻk koʻylak-kurtka",p:499990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:113,t:"kiyim",c:"Sviter",n:"Toʻq yashil polo sviter",p:399990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:114,t:"kiyim",c:"Sviter",n:"Kulrang yarim molniyali sviter",p:299990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."},
+{id:115,t:"kiyim",c:"Sviter",n:"Toʻq koʻk yarim molniyali sviter",p:299990,k:["#222","#555"],d:"Sifatli material, qulay kesim. Mavsum uchun ajoyib tanlov."}
+];
+const IMGS={10:"images/10.jpg",14:"images/14.jpg",17:"images/17.jpg",53:"images/53.jpg",54:"images/54.jpg",55:"images/55.jpg",56:"images/56.jpg",57:"images/57.jpg",58:"images/58.jpg",6:"images/6.jpg",41:"images/41.jpg",42:"images/42.jpg",43:"images/43.jpg",44:"images/44.jpg",45:"images/45.jpg",46:"images/46.jpg",48:"images/48.jpg",49:"images/49.jpg",50:"images/50.jpg",51:"images/51.jpg",52:"images/52.jpg",1:"images/1.jpg",2:"images/2.jpg",3:"images/3.jpg",4:"images/4.jpg",101:"images/101.jpg",102:"images/102.jpg",103:"images/103.jpg",104:"images/104.jpg",105:"images/105.jpg",106:"images/106.jpg",107:"images/107.jpg",108:"images/108.jpg",109:"images/109.jpg",110:"images/110.jpg",111:"images/111.jpg",112:"images/112.jpg",113:"images/113.jpg",114:"images/114.jpg",115:"images/115.jpg",};
+P.forEach(p=>{if(IMGS[p.id])p.im=IMGS[p.id]});
+for(let i=P.length-1;i>=0;i--)if(P[i].t==="atir"&&!P[i].im)P.splice(i,1);
+const $=s=>document.querySelector(s);
+let tab="hammasi",cart=[];
+try{cart=JSON.parse(localStorage.getItem("cart")||"[]")}catch(e){cart=[]}
+const save=()=>{try{localStorage.setItem("cart",JSON.stringify(cart))}catch(e){}};
+const opts=p=>p.o||(p.t==="atir"?ML:SZ);
+const prc=(p,o)=>p.t==="atir"&&!p.o?Math.round(p.p*(o==="30 ml"?.65:o==="100 ml"?1.6:1)/1000)*1000:p.p;
+const img=p=>p.im?`<div class="img ph"><img src="${p.im}" alt="${p.n}" loading="lazy"></div>`:`<div class="img ph">${bottle(p)}</div>`;
+
+function tabs(){
+ $("#tabs").innerHTML=[["hammasi","Hammasi"],["atir","Atirlar"],["kiyim","Erkaklar kiyimi"]].map(([k,l])=>`<button class="chip ${tab===k?"on":""}" data-t="${k}">${l}</button>`).join("");
+ const subs=[...new Set(P.filter(p=>tab==="hammasi"||p.t===tab).map(p=>p.c))];
+ $("#sub").innerHTML='<option value="">Barcha turlar</option>'+subs.map(s=>`<option>${s}</option>`).join("");
+}
+function render(){
+ const q=$("#q").value.toLowerCase(),s=$("#sub").value,o=$("#sort").value;
+ let l=P.filter(p=>(tab==="hammasi"||p.t===tab)&&(!s||p.c===s)&&p.n.toLowerCase().includes(q));
+ if(o)l.sort((a,b)=>o==="a"?a.p-b.p:b.p-a.p);
+ $("#grid").innerHTML=l.length?l.map(p=>`<div class="card" data-id="${p.id}"><div class="wrap">${img(p)}</div><div class="info"><small>${p.c}</small><h3>${p.n}</h3><div class="row"><span class="price">${SOM(prc(p,opts(p)[1]))}${p.t==="atir"&&!p.o?" dan":""}</span><button class="add">Tanlash</button></div></div></div>`).join(""):'<p class="empty" style="grid-column:1/-1">Hech narsa topilmadi</p>';
+}
+function open(el){$("#ov").classList.add("on");el.classList.add("on")}
+function closeAll(){["#ov","#modal","#drawer"].forEach(s=>$(s).classList.remove("on"))}
+
+function detail(id){
+ const p=P.find(x=>x.id==id);let sel=opts(p)[1]||opts(p)[0];
+ const m=$("#modal");
+ const draw=()=>{m.innerHTML=`<button class="x" aria-label="Yopish">×</button>${p.im?`<img class="mimg" src="${p.im}" alt="${p.n}">`:`<div class="img ph" style="max-height:62vh">${bottle(p)}</div>`}<div class="mb"><small>${p.c}</small><h3>${p.n}</h3><p>${p.d}</p>${p.nt?`<p class="notes">${p.nt}</p>`:""}<div class="opts">${opts(p).map(o=>`<button class="chip ${o===sel?"on":""}" data-o="${o}">${o}</button>`).join("")}</div><div class="row"><span class="price" style="font-size:22px">${SOM(prc(p,sel))}</span><button class="btn" id="addc" style="border:0">Savatga qoʻshish</button></div></div>`};
+ draw();open(m);
+ m.onclick=e=>{
+  if(e.target.closest(".x"))closeAll();
+  const o=e.target.closest("[data-o]");if(o){sel=o.dataset.o;draw()}
+  if(e.target.id==="addc"){addCart(p.id,sel);closeAll();showCart()}
+ };
+}
+function addCart(id,o){const f=cart.find(c=>c.id===id&&c.o===o);f?f.q++:cart.push({id,o,q:1});save();badge()}
+function badge(){$("#cc").textContent=cart.reduce((a,c)=>a+c.q,0)}
+const total=()=>cart.reduce((a,c)=>a+prc(P.find(p=>p.id===c.id),c.o)*c.q,0);
+
+function showCart(){
+ const d=$("#drawer");
+ d.innerHTML=`<button class="x" aria-label="Yopish">×</button><h3 style="font-size:28px;margin-bottom:8px">Savat</h3>`+(cart.length?
+ cart.map((c,i)=>{const p=P.find(x=>x.id===c.id);return `<div class="it"><div><b>${p.n}</b><br><small style="color:var(--mut)">${c.o} · ${SOM(prc(p,c.o))}</small></div><div class="q"><button data-m="${i}">−</button><span>${c.q}</span><button data-p="${i}">+</button></div></div>`}).join("")+
+ `<div class="tot"><span>Jami</span><span>${SOM(total())}</span></div><div class="f"><input id="nm" placeholder="Ismingiz"><input id="ph" type="tel" placeholder="Telefon raqamingiz"><textarea id="ad" rows="2" placeholder="Manzil"></textarea></div><button class="btn" id="send" style="width:100%;border:0">Telegram orqali buyurtma berish</button><p class="notes" style="text-align:center;margin-top:8px">Buyurtma Telegram’da @biro_asxal ga yuboriladi</p>`
+ :'<p class="empty">Savatingiz boʻsh</p>');
+ open(d);
+}
+$("#drawer").onclick=e=>{
+ const t=e.target;
+ if(t.closest(".x"))return closeAll();
+ if(t.dataset.p!==undefined){cart[t.dataset.p].q++}
+ else if(t.dataset.m!==undefined){const c=cart[t.dataset.m];c.q--;if(c.q<1)cart.splice(t.dataset.m,1)}
+ else if(t.id==="send"){
+  const nm=$("#nm").value.trim(),ph=$("#ph").value.trim(),ad=$("#ad").value.trim();
+  if(!nm||!ph){alert("Iltimos, ism va telefon raqamingizni kiriting.");return}
+  const lines=cart.map(c=>{const p=P.find(x=>x.id===c.id);return `• ${p.n} (${c.o}) × ${c.q} = ${SOM(prc(p,c.o)*c.q)}`});
+  const txt=`Yangi buyurtma\n${lines.join("\n")}\nJami: ${SOM(total())}\nIsm: ${nm}\nTelefon: ${ph}\nManzil: ${ad||"-"}`;
+  const a=document.createElement("a");a.href="https://t.me/biro_asxal?text="+encodeURIComponent(txt);a.target="_blank";a.rel="noopener";document.body.appendChild(a);a.click();a.remove();return;
+ }else return;
+ save();badge();const v={n:$("#nm")&&$("#nm").value,p:$("#ph")&&$("#ph").value,a:$("#ad")&&$("#ad").value};showCart();
+ if($("#nm")){$("#nm").value=v.n||"";$("#ph").value=v.p||"";$("#ad").value=v.a||""}
+};
+$("#tabs").onclick=e=>{const b=e.target.closest("[data-t]");if(b){tab=b.dataset.t;tabs();render()}};
+$("#grid").onclick=e=>{const c=e.target.closest(".card");if(c)detail(c.dataset.id)};
+$("#cb").onclick=showCart;$("#ov").onclick=closeAll;
+document.querySelectorAll("[data-go]").forEach(a=>a.addEventListener("click",()=>{tab=a.dataset.go;tabs();render()}));
+["#q","#sub","#sort"].forEach(s=>$(s).addEventListener("input",render));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeAll()});
+cart=cart.filter(c=>P.some(p=>p.id===c.id)&&opts(P.find(p=>p.id===c.id)).includes(c.o));save();tabs();render();badge();
+</script>
+</body>
+</html>
